@@ -48,7 +48,7 @@ from bul_tbl_tipos_noticia
 
 -- Noticia:/*{{{*/
 select
-concat(
+coalesce(concat(
 -- {{{
 '<item>
 	<title>', titulo_noticia, '</title>
@@ -126,14 +126,14 @@ concat(
 '</item>
 '
 -- }}}
-) as " "
+), '') as " "
 from bul_tbl_noticias
 order by id_noticia desc
 /*}}}*/
 
 -- Filtro:/*{{{*/
 -- where...
-limit 50
+limit 2000,50
 /*}}}*/
 ;
 
